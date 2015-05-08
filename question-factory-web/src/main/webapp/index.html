@@ -24,7 +24,7 @@
             $scope.myData = {};
             $scope.myData.doClick = function(item, event) {
 
-                var responsePromise = $http.get("/question-factory-rest/rest/kfc/brands/kfc-kampar");
+                var responsePromise = $http.get("/question-factory-web/rest/kfc/brands/kfc-kampar");
 
                 responsePromise.success(function(data, status, headers, config) {
                     $scope.myData.fromServer = data.name;
