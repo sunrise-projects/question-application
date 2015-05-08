@@ -10,3 +10,11 @@ Notes
 * http://www.javabeat.net/restcontroller-spring-4-0/
 * http://www.javabeat.net/content-negotiation-spring-mvc-3-2/
 * http://www.mkyong.com/spring-mvc/spring-3-mvc-and-json-example/
+* https://angularjs.org/
+* http://localhost:8080/question-factory-rest/rest/kfc/brands/kfc-kampar
+* http://tutorials.jenkov.com/angularjs/ajax.html
+* https://stackoverflow.com/questions/12591055/how-to-run-multiple-instances-of-jetty-with-maven
+* mvn jetty:run -Djetty.port=8081
+* http://www.thekspace.com/home/component/content/article/57-restful-clients-in-spring-3.html
+
+

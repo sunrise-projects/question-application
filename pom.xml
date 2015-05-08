@@ -12,6 +12,7 @@
         <module>question-factory-core</module>    
 	<module>question-persistence-factory</module>
 	<module>question-factory-rest</module>
+	<module>question-factory-web</module>
 </modules>
     <build>
         <pluginManagement>
