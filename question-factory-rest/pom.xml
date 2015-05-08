@@ -22,7 +22,7 @@
 		<jetty.version>9.2.3.v20140905</jetty.version>
 	</properties>
 	<build>
-		<finalName>quesrion-factory-rest</finalName>
+		<finalName>question-factory-rest</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
