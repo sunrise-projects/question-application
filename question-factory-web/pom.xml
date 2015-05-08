@@ -50,7 +50,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>quesrion-factory-web</finalName>
+		<finalName>question-factory-web</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
