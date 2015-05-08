@@ -57,3 +57,13 @@ before merging changes, you can also preview them by using
 git diff <source_branch> <target_branch>
 
 ```
+
+Notes
+========
+
+* https://portal-librequestion.rhcloud.com/question-factory-rest/apidocs/
+* https://portal-librequestion.rhcloud.com/question-factory-rest/rest/api-docs/questions
+* https://portal-librequestion.rhcloud.com/question-factory-rest/rest/application.wadl
+* https://portal-librequestion.rhcloud.com/question-factory-rest/questions/getFirstQuestion
+* 
+
