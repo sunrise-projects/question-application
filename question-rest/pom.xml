@@ -12,7 +12,7 @@
 	<artifactId>question-question-rest</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Question Factory Rest</name>
+	<name>Question Rest</name>
 	<properties>
 		<jersey.version>2.6</jersey.version>
 		<spring.version>3.2.3.RELEASE</spring.version>
@@ -164,13 +164,13 @@
 		<!-- Question persistence -->
 		<dependency>
 			<groupId>com.question.persistence.factory</groupId>
-			<artifactId>question-persistence-factory/artifactId>
+			<artifactId>question-persistence-factory</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>com.question.engine.factory</groupId>
-			<artifactId>question-engine.factory</artifactId>
+			<artifactId>question-engine-factory</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 				

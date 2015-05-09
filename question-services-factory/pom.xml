@@ -10,14 +10,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>	
     
-	<groupId>com.question.engine.factory</groupId>
-	<artifactId>question-engine-factory</artifactId>
+	<groupId>com.question.services.factory</groupId>
+	<artifactId>question-services-factory</artifactId>
  
 	<!-- Output to jar format -->
 	<packaging>jar</packaging>
  
 	<version>1.0-SNAPSHOT</version>
-	<name>Question Engine Factory</name>
+	<name>Question Services Factory</name>
 	<url>http://maven.apache.org</url>
  
 	<properties>
@@ -84,18 +84,11 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.10-FINAL</version>
 		</dependency>
-		
-		<!-- Question persistence -->
-		<dependency>
-			<groupId>com.questionfactory.persistence</groupId>
-			<artifactId>question-factory-persistence</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
 				
 	</dependencies>
  
 	<build>
-		<finalName>question-engine-factory</finalName>
+		<finalName>question-services-factory</finalName>
 		<plugins>
  
 			<!-- download source code in Eclipse, best practice -->
