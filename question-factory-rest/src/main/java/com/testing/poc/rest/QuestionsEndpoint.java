@@ -46,14 +46,13 @@ public class QuestionsEndpoint {
     @Path("/getFirstQuestion/{memberNumber}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Trigger getFirstQuestion operation", notes = "Trigger getFirstQuestion operation.", response = OperationInput.class)
+    @ApiOperation(value = "Trigger getFirstQuestion operation", notes = "Trigger getFirstQuestion operation.")
     @ApiResponses(value = { 
     		@ApiResponse(code = 201, message = "Successful registration of new user", response = QuestionBucketModel.class), 
     		@ApiResponse(code = 406, message = "Malformed definition"),
             @ApiResponse(code = 409, message = "Already exists"), 
             @ApiResponse(code = 500, message = "Internal server error") })
-    public Response getFirstQuestion( @PathParam("memberNumber") String memberNumber, 
-    		@ApiParam(name = "operationInput", required = true) OperationInput operationInput) {
+    public Response getFirstQuestion( @PathParam("memberNumber") String memberNumber) {
         try {
         	
         	
@@ -75,15 +74,14 @@ public class QuestionsEndpoint {
     @Path("/getNextQuestion/{memberNumber}/{sessionId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Trigger getNextQuestion operation", notes = "Trigger getNextQuestion operation.", response = OperationInput.class)
+    @ApiOperation(value = "Trigger getNextQuestion operation", notes = "Trigger getNextQuestion operation.")
     @ApiResponses(value = { 
     		@ApiResponse(code = 201, message = "Successful registration of new user", response = QuestionBucketModel.class), 
     		@ApiResponse(code = 406, message = "Malformed definition"),
             @ApiResponse(code = 409, message = "Already exists"), 
             @ApiResponse(code = 500, message = "Internal server error") })
     public Response getNextQuestion(@PathParam("memberNumber") String memberNumber,
-    		@PathParam("sessionId") String sessionId,
-    		@ApiParam(name = "operationInput", required = true) OperationInput operationInput) {
+    		@PathParam("sessionId") String sessionId) {
         try {
         	
         	
