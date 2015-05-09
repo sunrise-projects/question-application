@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.questionfactory</groupId>
-    <artifactId>question-factory-parent</artifactId>
+    <groupId>com.question</groupId>
+    <artifactId>question-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Question Factory Parent</name>
+    <name>Question Parent</name>
     <modules>
-        <module>question-factory-core</module>    
+        <module>question-engine-factory</module>    
 	<module>question-persistence-factory</module>
-	<module>question-factory-rest</module>
-	<module>question-factory-web</module>
+	<module>question-rest</module>
+	<module>question-web</module>
 </modules>
     <build>
         <pluginManagement>

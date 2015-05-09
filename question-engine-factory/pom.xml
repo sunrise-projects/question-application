@@ -5,19 +5,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	
     <parent>
-        <groupId>com.questionfactory</groupId>
-        <artifactId>question-factory-parent</artifactId>
+        <groupId>com.question</groupId>
+        <artifactId>question-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>	
     
-	<groupId>com.questionfactory.core</groupId>
-	<artifactId>question-factory-core</artifactId>
+	<groupId>com.question.engine.factory</groupId>
+	<artifactId>question-engine-factory</artifactId>
  
 	<!-- Output to jar format -->
 	<packaging>jar</packaging>
  
 	<version>1.0-SNAPSHOT</version>
-	<name>Question Factory Core</name>
+	<name>Question Engine</name>
 	<url>http://maven.apache.org</url>
  
 	<properties>
@@ -95,7 +95,7 @@
 	</dependencies>
  
 	<build>
-		<finalName>question-factory</finalName>
+		<finalName>question-engine-factory</finalName>
 		<plugins>
  
 			<!-- download source code in Eclipse, best practice -->
