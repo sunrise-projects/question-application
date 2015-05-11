@@ -15,7 +15,8 @@ public class QuestionService {
 
 	private Webservices service = null;
 
-	final String baseUrl = "http://localhost:8080/question-rest";
+	//final String baseUrl = "http://localhost:8080/question-rest";
+	final String baseUrl = "https://portal-librequestion.rhcloud.com/question-rest";
 	
 	@PostConstruct
 	public void initIt() throws Exception {
