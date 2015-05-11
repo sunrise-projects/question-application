@@ -60,10 +60,8 @@ git diff <source_branch> <target_branch>
 
 Notes
 ========
-
-* https://portal-librequestion.rhcloud.com/question-factory-rest/apidocs/
-* https://portal-librequestion.rhcloud.com/question-factory-rest/rest/api-docs/questions
-* https://portal-librequestion.rhcloud.com/question-factory-rest/rest/application.wadl
-* https://portal-librequestion.rhcloud.com/question-factory-rest/questions/getFirstQuestion
-* 
+* https://portal-librequestion.rhcloud.com/question-rest/rest/
+* https://portal-librequestion.rhcloud.com/question-rest/apidocs/
+* https://portal-librequestion.rhcloud.com/question-rest/rest/api-docs/questions
+* https://portal-librequestion.rhcloud.com/question-rest/rest/application.wadl
 
