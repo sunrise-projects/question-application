@@ -18,6 +18,9 @@ Notes
 * http://www.thekspace.com/home/component/content/article/57-restful-clients-in-spring-3.html
 * https://portal-librequestion.rhcloud.com/question-web/
 * https://portal-librequestion.rhcloud.com/question-web/rest/kfc/brands/kfc-kampar
-
+* https://portal-librequestion.rhcloud.com/question-web/rest/questions/getFirstQuestion/1/3914fdf6-d32c-48cb-8201-2a8fa5489a97
+* https://portal-librequestion.rhcloud.com/question-web/rest/questions/getNextQuestion/1/3914fdf6-d32c-48cb-8201-2a8fa5489a97
+* https://portal-librequestion.rhcloud.com/question-web/rest/questions/getWrongAnswer/1/3914fdf6-d32c-48cb-8201-2a8fa5489a97
+* https://portal-librequestion.rhcloud.com/question-web/rest/questions/checkAnswer/a/1/3914fdf6-d32c-48cb-8201-2a8fa5489a97/1
 
 
