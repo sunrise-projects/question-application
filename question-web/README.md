@@ -16,8 +16,8 @@ Notes
 * https://stackoverflow.com/questions/12591055/how-to-run-multiple-instances-of-jetty-with-maven
 * mvn jetty:run -Djetty.port=8081
 * http://www.thekspace.com/home/component/content/article/57-restful-clients-in-spring-3.html
-* https://portal-librequestion.rhcloud.com/question-factory-web/
-* https://portal-librequestion.rhcloud.com/question-factory-web/rest/kfc/brands/kfc-kampar
+* https://portal-librequestion.rhcloud.com/question-web/
+* https://portal-librequestion.rhcloud.com/question-web/rest/kfc/brands/kfc-kampar
 
 
 
