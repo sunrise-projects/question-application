@@ -4,7 +4,7 @@
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<!-- http://www.mkyong.com/spring/spring-postconstruct-and-predestroy-example/ -->
 
-	<context:component-scan base-package="com.testing.poc" />
+	<context:component-scan base-package="com.question.rest" />
 	<context:property-placeholder location="classpath:swagger.properties" />
 
 	<bean class="com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON" />
@@ -12,11 +12,5 @@
 	<bean class="com.wordnik.swagger.jaxrs.listing.ResourceListingProvider" />
 	
 	<context:annotation-config />
- 	<!-- 
-	<bean id="questionService" class="com.testing.poc.QuestionService">
-		<property name="message" value="initialize" />
-	</bean>
-		 -->
-	
 	
 </beans>

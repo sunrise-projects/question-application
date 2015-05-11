@@ -22,10 +22,12 @@
   <!-- enabling this will enable oauth2 implicit scope support -->
   <script src='lib/swagger-oauth.js' type='text/javascript'></script>
 
+  <!-- url: "https://portal-librequestion.rhcloud.com/question-rest/rest/api-docs", -->
+
   <script type="text/javascript">
     $(function () {
       window.swaggerUi = new SwaggerUi({
-      url: "https://portal-librequestion.rhcloud.com/question-factory-rest/rest/api-docs",
+      url: "http://localhost:8080/question-rest/rest/api-docs",
       dom_id: "swagger-ui-container",
       supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
       onComplete: function(swaggerApi, swaggerUi){
