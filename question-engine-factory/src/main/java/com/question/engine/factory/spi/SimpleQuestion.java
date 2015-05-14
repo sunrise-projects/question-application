@@ -1,5 +1,6 @@
 package com.question.engine.factory.spi;
 
+import java.io.InputStream;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
@@ -72,6 +73,10 @@ public class SimpleQuestion extends Question {
 			ContextDAO application = new ContextDAO();
 			application.setMemberNumber(memberNumber);
 			application.setPersistence(getPersistence());
+			if(input instanceof InputStream) {
+				InputStream in = (InputStream)input;
+				application.setInputFile(in);
+			}
 			startQengine.processRequest(application);
 			return applicationToBucket(application, false);
 		} catch (Exception e) {

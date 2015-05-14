@@ -1,11 +1,17 @@
 package com.question.services.factory.spi;
 
+import java.io.File;
+
 import javax.ws.rs.core.MediaType;
 
-import com.question.engine.factory.impl.simple.model.QuestionBucket;
 import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.multipart.FormDataMultiPart;
+import com.sun.jersey.multipart.file.FileDataBodyPart;
+ 
+
 
 public class JerseyRestImpl extends Webservices {
 
@@ -28,6 +34,39 @@ public class JerseyRestImpl extends Webservices {
 		}
 	}
 
+	public <T> T put(String url, File fileToUpload, Class<T> clazz) {
+		T resp;
+		try {
+			resp = clazz.newInstance();
+		} catch (InstantiationException e) {
+			throw new RuntimeException("Error : " + e.getMessage());
+		} catch (IllegalAccessException e) {
+			throw new RuntimeException("Error : " + e.getMessage());
+		}
+
+        final ClientConfig config = new DefaultClientConfig();
+        final Client putClient = Client.create(config);
+        
+        //https://crispcode.wordpress.com/2012/07/10/java-client-to-upload-files-on-jersey-rest-web-service/
+        
+		WebResource webResource = putClient
+				.resource(url);
+
+		final FormDataMultiPart multiPart = new FormDataMultiPart();
+        if (fileToUpload != null)
+        {
+            multiPart.bodyPart(new FileDataBodyPart("inputFile", fileToUpload,
+                    MediaType.APPLICATION_OCTET_STREAM_TYPE));
+        }
+ 
+        resp = (T)webResource.type(
+                MediaType.MULTIPART_FORM_DATA_TYPE).put(clazz,
+                multiPart);
+
+		return resp;
+	}
+
+	
 	public <T> T get(String url, Class<T> clazz) {
 		T resp;
 		try {

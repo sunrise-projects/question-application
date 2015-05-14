@@ -77,12 +77,16 @@ public class StartQAPositiveAction extends QAPersistenceAwareAction {
 		
 		InputStream is = null; 
 		
-		if(application.getExcelFile() != null && !application.getExcelFile().isEmpty() ) {
-			is = new FileInputStream(application.getExcelFile());
+		
+		if(application.getInputFile() == null ) {
+			if(application.getExcelFile() != null && !application.getExcelFile().isEmpty() ) {
+				is = new FileInputStream(application.getExcelFile());
+			} else {
+				is = classloader.getResourceAsStream("excel/sample.xlsx");
+			}			
 		} else {
-			is = classloader.getResourceAsStream("excel/sample.xlsx");
+			is = application.getInputFile();
 		}
-			
 		
 		
 		@SuppressWarnings("unchecked")

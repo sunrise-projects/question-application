@@ -22,5 +22,6 @@ Notes
 * https://portal-librequestion.rhcloud.com/question-web/rest/questions/getNextQuestion/1/3914fdf6-d32c-48cb-8201-2a8fa5489a97
 * https://portal-librequestion.rhcloud.com/question-web/rest/questions/getWrongAnswer/1/3914fdf6-d32c-48cb-8201-2a8fa5489a97
 * https://portal-librequestion.rhcloud.com/question-web/rest/questions/checkAnswer/a/1/3914fdf6-d32c-48cb-8201-2a8fa5489a97/1
-
+* https://portal-librequestion.rhcloud.com/question-web/rest/questions/getFirstQuestion/1111/inputFile
+* https://portal-librequestion.rhcloud.com/question-web/rest/questions/getNextQuestion/1/519847da-9a4f-473a-bd9e-8ec17ceb43c8
 
