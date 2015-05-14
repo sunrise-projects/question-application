@@ -1,5 +1,7 @@
 package com.question.engine.factory.client;
 
+import java.io.InputStream;
+
 import org.apache.log4j.Logger;
 
 import com.question.engine.factory.impl.simple.model.AnswerBucket;
@@ -23,6 +25,10 @@ public class QuestionApp {
 		Persistence  persistence = PersistenceFactory.getInstance(PersistenceType.FILE);
 		
 	    Question question = QuestionFactory.getInstance(QuestionType.SIMPLE, persistence );
+	    
+	    //ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+	    //InputStream is = classloader.getResourceAsStream("excel/sample2-tab-lx.xlsx");
+	    //QuestionBucket questionBucket = question.getFirstQuestion(is,"12345");
 	    
 	    QuestionBucket questionBucket = question.getFirstQuestion("","12345");
 	    System.out.println(questionBucket.toString());

@@ -1,12 +1,21 @@
 package com.question.web.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import javax.inject.Inject;
+import javax.management.RuntimeErrorException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.question.engine.factory.impl.simple.model.AnswerBucket;
 import com.question.engine.factory.impl.simple.model.QuestionBucket;
@@ -23,6 +32,88 @@ public class QuestionController {
 	@Inject
 	private QuestionService questionService;
 
+	//https://spring.io/guides/gs/uploading-files/
+	//http://docs.spring.io/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/Configuration.html
+	//http://www.mkyong.com/spring-mvc/spring-mvc-file-upload-example/
+	//http://www.mkyong.com/spring-mvc/spring-mvc-file-upload-example/
+	
+	
+    private void writeByteArrayToFile(byte[] t, String strFilePath) {
+        
+        //String strFilePath = "C://FileIO//demo.txt";
+       
+         try
+         {
+          FileOutputStream fos = new FileOutputStream(strFilePath);
+          String strContent = "Write File using Java FileOutputStream example !";
+             
+          /*
+           * To write byte array to a file, use
+           * void write(byte[] bArray) method of Java FileOutputStream class.
+           *
+           * This method writes given byte array to a file.
+           */
+         
+           //fos.write(strContent.getBytes());
+          
+          fos.write(t);
+         
+          /*
+           * Close FileOutputStream using,
+           * void close() method of Java FileOutputStream class.
+           *
+           */
+         
+           fos.close();
+         
+         }
+         catch(FileNotFoundException ex)
+         {
+          System.out.println("FileNotFoundException : " + ex);
+         }
+         catch(IOException ioe)
+         {
+          System.out.println("IOException : " + ioe);
+         }
+       
+      }
+    
+	
+	
+	
+	private File convert(MultipartFile file) throws IOException
+	{    
+	    File convFile = new File(file.getOriginalFilename());
+	    convFile.createNewFile(); 
+	    FileOutputStream fos = new FileOutputStream(convFile); 
+	    fos.write(file.getBytes());
+	    fos.close(); 
+	    return convFile;
+	}
+	
+    @RequestMapping(value="/getFirstQuestion/{memberNumber}/inputFile", method=RequestMethod.POST)
+    public @ResponseBody QuestionBucket handleFileUpload(@PathVariable("memberNumber") String memberNumber,
+            @RequestParam("file") MultipartFile file) {
+    	String name = "Unknown";
+    	File input  = null;
+    	try {
+			input = convert(file);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+    	System.out.println(input.getAbsolutePath());
+    	
+    	QuestionBucket questionBucket2 = questionService.put("/rest/questions/getFirstQuestion/"+memberNumber+"/inputFile", input, QuestionBucket.class);
+
+    	if(input.delete()){
+			System.out.println(input.getName() + " is deleted!");
+		}else{
+			System.out.println("Delete operation is failed.");
+		}
+    	
+    	return questionBucket2;
+    }
+    
 	@RequestMapping(value = "/getFirstQuestion/{memberNumber}", method = RequestMethod.GET)
 	public @ResponseBody
 	QuestionBucket getFirstQuestion(@PathVariable String memberNumber) {

@@ -1,5 +1,7 @@
 package com.question.services.factory.client;
 
+import java.io.File;
+
 import com.question.engine.factory.impl.simple.model.QuestionBucket;
 import com.question.services.factory.spi.Webservices;
 import com.question.services.factory.spi.WebservicesFactory;
@@ -19,6 +21,9 @@ public class JerseyRestApp {
 
 		String jsonNextString = service.get("http://localhost:8080/question-rest/rest/questions/getNextQuestion/1/"+questionBucket.getSessionId(), String.class);
 		System.out.println(jsonNextString);
+		
+		QuestionBucket questionBucket2 = service.put("http://localhost:8080/question-rest/rest/questions/getFirstQuestion/1/inputFile", new File("/usr/home/blight/javaapps/33/question-application/question-engine-factory/src/main/resources/excel/sample2-tab-lx.xlsx"), QuestionBucket.class);
+		System.out.println(questionBucket2.toString());
 			
 
 	}

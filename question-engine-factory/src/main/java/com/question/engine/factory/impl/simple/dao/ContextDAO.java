@@ -1,5 +1,7 @@
 package com.question.engine.factory.impl.simple.dao;
+import java.io.InputStream;
 import java.util.Arrays;
+
 import com.question.persistence.factory.spi.Persistence;
 
 public class ContextDAO {
@@ -43,6 +45,18 @@ public class ContextDAO {
 	
 	private Persistence persistence;
 	
+	
+	private InputStream inputFile;
+	
+	
+	
+	
+	public InputStream getInputFile() {
+		return inputFile;
+	}
+	public void setInputFile(InputStream inputFile) {
+		this.inputFile = inputFile;
+	}
 	public Persistence getPersistence() {
 		return persistence;
 	}

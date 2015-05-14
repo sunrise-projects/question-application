@@ -37,7 +37,7 @@ public class QuestionService
 	}
  
 	public QuestionBucket getFirstQuestion(Object object, String memberNumber) {
-		QuestionBucket questionBucket = question.getFirstQuestion("",memberNumber);
+		QuestionBucket questionBucket = question.getFirstQuestion(object, memberNumber);
 	    System.out.println(questionBucket.toString());
 	    System.out.println(questionBucket.getStatus());
 		return questionBucket;

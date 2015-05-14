@@ -9,7 +9,7 @@
     </parent>	
     	
 	<groupId>com.question.rest</groupId>
-	<artifactId>question-question-rest</artifactId>
+	<artifactId>question-rest</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>Question Rest</name>

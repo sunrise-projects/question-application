@@ -1,5 +1,7 @@
 package com.question.services.factory.spi;
 
+import java.io.File;
+
 
 public abstract class Webservices {
 	
@@ -28,6 +30,8 @@ public abstract class Webservices {
     public abstract <T> T get(String url, Class<T> clazz);
     
     public abstract <T> T get(String baseUrl, String pathUrl, Class<T> clazz);
+    
+    public abstract <T> T put(String url, File fileToUpload, Class<T> clazz);
     
     
     

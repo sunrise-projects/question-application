@@ -1,5 +1,7 @@
 package com.question.web.services;
 
+import java.io.File;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
@@ -33,6 +35,7 @@ public class QuestionService {
 //				QuestionBucket.class);
 //		System.out.println(questionBucketStr);
 		
+		
 
 
 	}
@@ -46,5 +49,10 @@ public class QuestionService {
 	public <T> T get(String url, Class<T> clazz) {
 		return service.get(baseUrl+url, clazz);
 	}
+	
+	public <T> T put(String url, File fileToUpload, Class<T> clazz) {
+		return service.put(baseUrl+url, fileToUpload, clazz);
+	}
+	
 
 }
