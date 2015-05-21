@@ -21,6 +21,7 @@ public class QAUtils {
 	@SuppressWarnings("resource")
 	public static String showQuestionHelper(QuestionBucket bucket, boolean showAnswer) {
 		Scanner scanIn = null;
+		System.out.println("QuestionType: "+bucket.getQuestionType());
 		System.out.println("Question: "+bucket.getQuestion());
 		if(showAnswer) {
 			System.out.println("View selections below:");
@@ -47,7 +48,24 @@ public class QAUtils {
 			System.out.print("Answer ? : ");
 			scanIn = new Scanner(System.in);
 			String answerInt = scanIn.nextLine();		
-			String answer = mapAnswer.get(Integer.valueOf(answerInt));
+			
+			String answer = "";
+			if(answerInt.contains(",")) {
+				String[] ans = answerInt.split(",");
+				int s = ans.length-1;
+				int c = 0;
+				for(String a : ans) {
+					answer = answer + mapAnswer.get(Integer.valueOf(a));
+					if(c < s ) {
+						answer = answer + ",";
+					}
+					c++;
+				}
+			} else {
+				answer = mapAnswer.get(Integer.valueOf(answerInt));
+			}
+			
+			
 			System.out.println("Your answer is: "+answerInt + " = " +answer);	
 			return answer;				
 		}		

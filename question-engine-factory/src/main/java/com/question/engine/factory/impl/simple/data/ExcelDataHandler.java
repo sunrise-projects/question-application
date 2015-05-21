@@ -104,6 +104,7 @@ public class ExcelDataHandler extends DataHandler  {
 				q.setExplanation(items.get(0).toString());
 				q.setQuestion(items.get(1).toString());
 				q.setAnswer(items.get(2).toString());
+				q.setQuestionType( items.get(2).toString().contains(",") ? "multi" : "single");
 				Map<String,String> m1 = new HashMap<String,String>();
 				//this can through an error if user put 6 answers or more. will throw business logic in future.
 				String[] letters = new String[]{"a","b","c","d","e","f","g","h","j","k","l","m","o","p","q","r","s","t","u"};

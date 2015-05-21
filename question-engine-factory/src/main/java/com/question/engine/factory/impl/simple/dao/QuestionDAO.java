@@ -22,7 +22,17 @@ public class QuestionDAO implements Serializable {
 	private String testerAnswer;
 	private boolean testerCorrect;
 	
+	private String questionType;
 	
+	
+	public String getQuestionType() {
+		return questionType;
+	}
+
+	public void setQuestionType(String questionType) {
+		this.questionType = questionType;
+	}
+
 	public boolean isTesterCorrect() {
 		return testerCorrect;
 	}

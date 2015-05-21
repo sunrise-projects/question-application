@@ -1,4 +1,4 @@
-package com.question.engine.factory.impl.simple.model;
+package com.question.services.factory.model;
 
 import java.util.Map;
 

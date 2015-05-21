@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 
-import com.question.engine.factory.impl.simple.model.QuestionBucket;
+import com.question.services.factory.model.QuestionBucket;
 
 //import com.sun.jersey.api.client.Client;
 //import com.sun.jersey.api.client.ClientResponse;

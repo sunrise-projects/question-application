@@ -115,12 +115,14 @@
 		</dependency>	
 	
 		<!-- questionbucket models -->
+		<!-- removed dependency  
 		<dependency>
 			<groupId>com.question.engine.factory</groupId>
 			<artifactId>question-engine-factory</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>	
-	
+	 	-->
+	 	
 	</dependencies>
  
 	<build>
