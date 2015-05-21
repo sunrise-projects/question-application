@@ -32,7 +32,16 @@ public class QuestionBucketModel {
 	
 	@ApiModelProperty(position = 8, required = true, value = "Status")
 	private QuestionBucketStatus status;
+
+	@ApiModelProperty(position = 9, required = true, value = "Question Type")
+	private String questionType;
 	
+	public String getQuestionType() {
+		return questionType;
+	}
+	public void setQuestionType(String questionType) {
+		this.questionType = questionType;
+	}
 	public String getAnswer() {
 		return answer;
 	}
@@ -87,11 +96,14 @@ public class QuestionBucketModel {
 	}
 	@Override
 	public String toString() {
-		return "QuestionBucket [question=" + question + ", selection="
+		return "QuestionBucketModel [question=" + question + ", selection="
 				+ selection + ", questionNumber=" + questionNumber
 				+ ", sessionId=" + sessionId + ", answer=" + answer
 				+ ", explanation=" + explanation + ", questionBucketDetails="
-				+ questionBucketDetails + ", status=" + status + "]";
+				+ questionBucketDetails + ", status=" + status
+				+ ", questionType=" + questionType + "]";
 	}
+
+
 	
 }

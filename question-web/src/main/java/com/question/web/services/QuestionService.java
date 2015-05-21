@@ -7,7 +7,7 @@ import javax.annotation.PreDestroy;
 
 import org.springframework.stereotype.Service;
 
-import com.question.engine.factory.impl.simple.model.QuestionBucket;
+import com.question.services.factory.model.QuestionBucket;
 import com.question.services.factory.spi.Webservices;
 import com.question.services.factory.spi.WebservicesFactory;
 import com.question.services.factory.spi.WebservicesType;
@@ -17,8 +17,8 @@ public class QuestionService {
 
 	private Webservices service = null;
 
-	//final String baseUrl = "http://localhost:8080/question-rest";
-	final String baseUrl = "https://portal-librequestion.rhcloud.com/question-rest";
+	final String baseUrl = "http://localhost:8080/question-rest";
+	//final String baseUrl = "https://portal-librequestion.rhcloud.com/question-rest";
 	
 	@PostConstruct
 	public void initIt() throws Exception {

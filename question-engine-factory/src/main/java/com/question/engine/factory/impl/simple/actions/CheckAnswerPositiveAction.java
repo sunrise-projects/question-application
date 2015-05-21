@@ -43,7 +43,38 @@ public class CheckAnswerPositiveAction extends QAPersistenceAwareAction {
 		// logger.debug(ctx.getQuestionAnswer().equals(dao.getAnswer()));
 		// logger.debug(dao.getCorrectAnswerCount());
 
-		if (ctx.getQuestionAnswer().equals(dao.getAnswer())) {
+		System.out.println("ctx.getQuestionAnswer() {} " + ctx.getQuestionAnswer());
+		System.out.println("dao.getAnswer() {} " + dao.getAnswer());
+		
+		boolean answerIsCorrect = true;
+		//answer is same size and matching, i.e a and a and a = a amd length is 1
+		if( (ctx.getQuestionAnswer().length() == dao.getAnswer().length()) 
+				&& !ctx.getQuestionAnswer().equals(dao.getAnswer())
+				&& ctx.getQuestionAnswer().length() == 1 ) {
+			answerIsCorrect = false;
+		}
+		//answer is not same size. a,c and a or a and a,c
+		if( !(ctx.getQuestionAnswer().length() == dao.getAnswer().length()) ) {
+			answerIsCorrect = false;
+		}	
+		
+		if( (ctx.getQuestionAnswer().length() == dao.getAnswer().length()) 
+				&& ctx.getQuestionAnswer().length() > 1) {
+			
+			String[] yourAnswers = ctx.getQuestionAnswer().split(","); 
+			String[] questionAnswer = dao.getAnswer().split(","); 
+			
+			List<String> yourAnswersList = Arrays.asList(yourAnswers);
+			List<String> questionAnswerList = Arrays.asList(questionAnswer);
+			
+			for(String yourAnswer : yourAnswersList ) {
+				if( !questionAnswerList.contains(yourAnswer)) answerIsCorrect = false;
+			}
+		}
+ 		
+		
+		
+		if (answerIsCorrect) {
 			int correct = dao.getCorrectAnswerCount();
 			int c = correct + 1;
 			dao.setCorrectAnswerCount(c);

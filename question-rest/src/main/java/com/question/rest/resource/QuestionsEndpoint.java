@@ -197,6 +197,7 @@ public class QuestionsEndpoint {
     private QuestionBucketModel toModel(QuestionBucket questionBucket) {
     	QuestionBucketModel model = new QuestionBucketModel();
 	    model.setAnswer(questionBucket.getAnswer());
+	    model.setQuestionType(questionBucket.getQuestionType());
 	    model.setExplanation(questionBucket.getExplanation());
 	    model.setQuestion(questionBucket.getQuestion());
 	    QuestionBucketDetailsModel questionBucketDetailsModel = new QuestionBucketDetailsModel();

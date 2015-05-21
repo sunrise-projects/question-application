@@ -2,7 +2,7 @@ package com.question.services.factory.client;
 
 import java.io.File;
 
-import com.question.engine.factory.impl.simple.model.QuestionBucket;
+import com.question.services.factory.model.QuestionBucket;
 import com.question.services.factory.spi.Webservices;
 import com.question.services.factory.spi.WebservicesFactory;
 import com.question.services.factory.spi.WebservicesType;

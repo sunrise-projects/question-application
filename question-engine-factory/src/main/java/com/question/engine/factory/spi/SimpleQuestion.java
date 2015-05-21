@@ -130,6 +130,7 @@ public class SimpleQuestion extends Question {
 		bucket.setQuestionNumber(application.getQandaSessionDAO()
 				.getQuestionSessionNumber());
 		bucket.setSessionId(application.getSessiondId());
+		bucket.setQuestionType(qa == null ? "" : qa.getQuestionType());
 		if (application.getStatus().equals(ContextDAO.QUESTION_AVAILABLE)) {
 			bucket.setStatus(QuestionBucketStatus.QUESTION_AVAILABLE);
 		} else if (application.getStatus().equals(

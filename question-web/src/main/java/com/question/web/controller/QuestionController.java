@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.question.engine.factory.impl.simple.model.AnswerBucket;
-import com.question.engine.factory.impl.simple.model.QuestionBucket;
+import com.question.services.factory.model.AnswerBucket;
+import com.question.services.factory.model.QuestionBucket;
 import com.question.web.services.QuestionService;
 
 @Controller
