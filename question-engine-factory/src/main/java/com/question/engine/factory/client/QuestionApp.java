@@ -27,7 +27,7 @@ public class QuestionApp {
 	    Question question = QuestionFactory.getInstance(QuestionType.SIMPLE, persistence );
 	    
 	    ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-	    InputStream is = classloader.getResourceAsStream("excel/multi-sample2-tab-lx.xlsx");
+	    InputStream is = classloader.getResourceAsStream("excel/sample-multi.xlsx");
 	    QuestionBucket questionBucket = question.getFirstQuestion(is,"12345");
 	    
 	    //QuestionBucket questionBucket = question.getFirstQuestion("","12345");
