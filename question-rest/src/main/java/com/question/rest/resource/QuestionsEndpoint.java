@@ -36,7 +36,7 @@ import com.wordnik.swagger.annotations.ApiResponses;
  * REST endpoint for user manipulation.
  * http://www.mkyong.com/webservices/jax-rs/jax-rs-pathparam-example/
  */
-@Api(value = "questions", description = "Endpoint for questions management")
+@Api(value = "questions", description = "Endpoint for questions")
 @Path("/questions")
 public class QuestionsEndpoint {
 
@@ -103,10 +103,7 @@ public class QuestionsEndpoint {
             return Response.status(Status.NOT_ACCEPTABLE).entity(e.getMessage()).build();
         }
     }
-    
-    /**
-     * Creates and registers user in application.
-     */
+
     @PUT
     @Path("/getFirstQuestion/{memberNumber}/inputFile")
     @Consumes(MediaType.MULTIPART_FORM_DATA)

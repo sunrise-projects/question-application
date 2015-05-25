@@ -1,7 +1,11 @@
 package com.question.engine.factory.spi;
 
+import java.util.List;
+
 import com.question.engine.factory.impl.simple.model.AnswerBucket;
 import com.question.engine.factory.impl.simple.model.QuestionBucket;
+import com.question.engine.factory.impl.simple.model.QuizBucket;
+import com.question.engine.factory.impl.simple.model.SaveAnswerResponse;
 import com.question.persistence.factory.spi.Persistence;
 public abstract class Question {
 	
@@ -46,4 +50,11 @@ public abstract class Question {
     
     public abstract QuestionBucket getWrongAnswer(String memberNumber, String sessionId);
     
+    public abstract <T> List<QuizBucket> getQuizQuestions(T input, String memberNumber);
+    
+	public abstract SaveAnswerResponse saveQuizAnswer(String answer, String memberNumber,
+			String sessionId, int questionNumber);
+
+	public abstract List<QuizBucket> getQuizResult(String memberNumber, String sessionId);
+	
 }

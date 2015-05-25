@@ -11,18 +11,127 @@ import com.question.engine.factory.impl.simple.actions.StartQANegativeAction;
 import com.question.engine.factory.impl.simple.actions.StartQAPositiveAction;
 import com.question.engine.factory.impl.simple.actions.WrongAnswerNegativeAction;
 import com.question.engine.factory.impl.simple.actions.WrongAnswerPositiveAction;
+import com.question.engine.factory.impl.simple.actions.quiz.CheckResultQuizNegativeAction;
+import com.question.engine.factory.impl.simple.actions.quiz.CheckResultQuizPositiveAction;
+import com.question.engine.factory.impl.simple.actions.quiz.SaveAnswerQuizNegativeAction;
+import com.question.engine.factory.impl.simple.actions.quiz.SaveAnswerQuizPositiveAction;
+import com.question.engine.factory.impl.simple.actions.quiz.StartQuizNegativeAction;
+import com.question.engine.factory.impl.simple.actions.quiz.StartQuizPositiveAction;
 import com.question.engine.factory.impl.simple.framework.SpringRuleEngine;
 import com.question.engine.factory.impl.simple.rules.CheckAnswerRule;
 import com.question.engine.factory.impl.simple.rules.NextQuestionRule;
 import com.question.engine.factory.impl.simple.rules.StartQARule;
 import com.question.engine.factory.impl.simple.rules.WrongAnswerRule;
+import com.question.engine.factory.impl.simple.rules.quiz.CheckResultQuizRule;
+import com.question.engine.factory.impl.simple.rules.quiz.SaveAnswerQuizRule;
+import com.question.engine.factory.impl.simple.rules.quiz.StartQuizRule;
 import com.question.engine.factory.impl.simple.services.SerializedQAPersistence;
 
 
 @Configuration
 public class SpringConfig {
  
+	
+    //------------------------------ check answer quiz rule
     
+    
+    @Bean(name="CheckResultQuizPositiveAction")
+    public CheckResultQuizPositiveAction checkResultQuizPositiveAction() {
+    	CheckResultQuizPositiveAction v = new CheckResultQuizPositiveAction();
+    	v.setPersistenceService(qaPersistenceService());
+        return v;
+    }
+    
+    @Bean(name="CheckResultQuizNegativeAction")
+    public CheckResultQuizNegativeAction checkResultQuizNegativeAction() {
+    	CheckResultQuizNegativeAction v = new CheckResultQuizNegativeAction();
+    	v.setPersistenceService(qaPersistenceService());
+        return v;
+    }
+    
+    @Bean(name="CheckResultQuizRule")
+    public CheckResultQuizRule checkResultQuizRule() {
+    	CheckResultQuizRule v = new CheckResultQuizRule();
+    	v.setNegativeOutcomeStep(checkResultQuizNegativeAction());
+    	v.setPositiveOutcomeStep(checkResultQuizPositiveAction());
+        return v;
+    }
+    
+    @Bean(name="CheckResultQuizProcessor")
+    public SpringRuleEngine checkResultQuizProcessor() {
+    	SpringRuleEngine v = new SpringRuleEngine();
+    	v.setFirstStep(checkResultQuizRule());
+        return v;
+    }
+
+	
+    //------------------------------ save answer quiz rule
+    
+    
+    @Bean(name="SaveAnswerQuizPositiveAction")
+    public SaveAnswerQuizPositiveAction saveAnswerQuizPositiveAction() {
+    	SaveAnswerQuizPositiveAction v = new SaveAnswerQuizPositiveAction();
+    	v.setPersistenceService(qaPersistenceService());
+        return v;
+    }
+    
+    @Bean(name="SaveAnswerQuizNegativeAction")
+    public SaveAnswerQuizNegativeAction saveAnswerQuizNegativeAction() {
+    	SaveAnswerQuizNegativeAction v = new SaveAnswerQuizNegativeAction();
+    	v.setPersistenceService(qaPersistenceService());
+        return v;
+    }
+    
+    @Bean(name="SaveAnswerQuizRule")
+    public SaveAnswerQuizRule saveAnswerQuizRule() {
+    	SaveAnswerQuizRule v = new SaveAnswerQuizRule();
+    	v.setNegativeOutcomeStep(saveAnswerQuizNegativeAction());
+    	v.setPositiveOutcomeStep(saveAnswerQuizPositiveAction());
+        return v;
+    }
+    
+    @Bean(name="SaveAnswerQuizProcessor")
+    public SpringRuleEngine saveAnswerQuizProcessor() {
+    	SpringRuleEngine v = new SpringRuleEngine();
+    	v.setFirstStep(saveAnswerQuizRule());
+        return v;
+    }
+	
+    //------------------------------ quiz start rule
+    
+    
+    @Bean(name="StartQuizPositiveAction")
+    public StartQuizPositiveAction startQuizPositiveAction() {
+    	StartQuizPositiveAction v = new StartQuizPositiveAction();
+    	v.setPersistenceService(qaPersistenceService());
+        return v;
+    }
+    
+    @Bean(name="StartQuizNegativeAction")
+    public StartQuizNegativeAction startQuizNegativeAction() {
+    	StartQuizNegativeAction v = new StartQuizNegativeAction();
+    	v.setPersistenceService(qaPersistenceService());
+        return v;
+    }
+    
+    @Bean(name="StartQuizRule")
+    public StartQuizRule startQuizRule() {
+    	StartQuizRule v = new StartQuizRule();
+    	v.setNegativeOutcomeStep(startQuizNegativeAction());
+    	v.setPositiveOutcomeStep(startQuizPositiveAction());
+        return v;
+    }
+    
+    @Bean(name="StartQuizProcessor")
+    public SpringRuleEngine startQuizProcessor() {
+    	SpringRuleEngine v = new SpringRuleEngine();
+    	v.setFirstStep(startQuizRule());
+        return v;
+    }
+ 	
+	
+    //------------------------------ persistence
+
     @Bean(name="QAPersistenceService")
     public SerializedQAPersistence qaPersistenceService() {
     	SerializedQAPersistence v = new SerializedQAPersistence();

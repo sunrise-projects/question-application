@@ -2,18 +2,51 @@ package com.question.engine.factory.impl.simple.model;
 
 import java.util.Map;
 
-public class QuestionBucket {
+public class QuizBucket {
 	
 	private String question;
 	private Map<String, String> selection;
 	private int questionNumber;
-	private String sessionId;
-	
+
 	private String answer;
 	private String explanation;
 	
 	private String questionType;
 
+	private String memberAnswer;
+
+	private boolean correct;
+
+	private String memberNumber;
+	private String sessionId;
+	
+	private QuestionBucketStatus status;
+	
+	
+	public String getMemberNumber() {
+		return memberNumber;
+	}
+	public void setMemberNumber(String memberNumber) {
+		this.memberNumber = memberNumber;
+	}
+	public String getSessionId() {
+		return sessionId;
+	}
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+	public boolean isCorrect() {
+		return correct;
+	}
+	public void setCorrect(boolean correct) {
+		this.correct = correct;
+	}
+	public String getMemberAnswer() {
+		return memberAnswer;
+	}
+	public void setMemberAnswer(String memberAnswer) {
+		this.memberAnswer = memberAnswer;
+	}
 	public String getQuestionType() {
 		return questionType;
 	}
@@ -33,16 +66,6 @@ public class QuestionBucket {
 		this.explanation = explanation;
 	}
 	
-	private QuestionBucketDetails questionBucketDetails;
-	
-	private QuestionBucketStatus status;
-	
-	public QuestionBucketDetails getQuestionBucketDetails() {
-		return questionBucketDetails;
-	}
-	public void setQuestionBucketDetails(QuestionBucketDetails questionBucketDetails) {
-		this.questionBucketDetails = questionBucketDetails;
-	}
 	public QuestionBucketStatus getStatus() {
 		return status;
 	}
@@ -56,12 +79,7 @@ public class QuestionBucket {
 	public void setQuestionNumber(int questionNumber) {
 		this.questionNumber = questionNumber;
 	}
-	public String getSessionId() {
-		return sessionId;
-	}
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-	}
+
 	public String getQuestion() {
 		return question;
 	}
@@ -76,15 +94,13 @@ public class QuestionBucket {
 	}
 	@Override
 	public String toString() {
-		return "QuestionBucket [question=" + question + ", selection="
-				+ selection + ", questionNumber=" + questionNumber
-				+ ", sessionId=" + sessionId + ", answer=" + answer
+		return "QuizBucket [question=" + question + ", selection=" + selection
+				+ ", questionNumber=" + questionNumber + ", answer=" + answer
 				+ ", explanation=" + explanation + ", questionType="
-				+ questionType + ", questionBucketDetails="
-				+ questionBucketDetails + ", status=" + status + "]";
+				+ questionType + ", memberAnswer=" + memberAnswer
+				+ ", correct=" + correct + ", memberNumber=" + memberNumber
+				+ ", sessionId=" + sessionId + ", status=" + status + "]";
 	}
-
-
 
 
 	

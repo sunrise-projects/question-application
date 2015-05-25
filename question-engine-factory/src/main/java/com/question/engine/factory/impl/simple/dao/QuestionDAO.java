@@ -25,6 +25,28 @@ public class QuestionDAO implements Serializable {
 	private String questionType;
 	
 	
+	//used for Quiz Logic
+	private String memberAnswer;
+	private boolean correct;
+	
+	
+	
+	public String getMemberAnswer() {
+		return memberAnswer;
+	}
+
+	public void setMemberAnswer(String memberAnswer) {
+		this.memberAnswer = memberAnswer;
+	}
+
+	public boolean isCorrect() {
+		return correct;
+	}
+
+	public void setCorrect(boolean correct) {
+		this.correct = correct;
+	}
+
 	public String getQuestionType() {
 		return questionType;
 	}
@@ -104,8 +126,11 @@ public class QuestionDAO implements Serializable {
 				+ correctAnswerCount + ", explanation=" + explanation
 				+ ", illustration=" + illustration + ", selections="
 				+ selections + ", testerAnswer=" + testerAnswer
-				+ ", testerCorrect=" + testerCorrect + "]";
+				+ ", testerCorrect=" + testerCorrect + ", questionType="
+				+ questionType + ", memberAnswer=" + memberAnswer
+				+ ", correct=" + correct + "]";
 	}
+
 	
 	
 	
