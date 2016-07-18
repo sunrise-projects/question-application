@@ -2,6 +2,12 @@
 question-application
 
 =========
+# Swagger
+
+* https://portal-librequestion.rhcloud.com/question-rest/apidocs/
+* http://ec2-54-175-28-226.compute-1.amazonaws.com/question-rest/apidocs/
+
+=========
 
 
 * https://portal-librequestion.rhcloud.com/question-web/rest/questions/getFirstQuestion/1
